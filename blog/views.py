@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from app.forms import *
+from .forms import *
 # Create your views here.
 def index(request):
 	return render(request, 'index.html',{})
@@ -17,10 +17,11 @@ def get_story(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            stry = form.cleaned_data['your_story']
+            return HttpResponseRedirect('/index/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = StoryForm()
 
-    return render(request, 'story.html', {'form': form})
+    return render(request, 'story.html', {'form': form}) 
