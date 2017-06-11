@@ -1,4 +1,15 @@
 from django import forms
 
-class StoryForm(forms.Form):
-    your_story = forms.CharField(label='Enter Story', max_length=100)
+from .models import Story
+
+class StoryForm(forms.ModelForm):
+	class Meta():
+		model = Story
+		fields = [
+			"title",
+			"body"
+		]
+
+			
+			
+    

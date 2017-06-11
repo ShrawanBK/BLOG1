@@ -18,7 +18,7 @@ from django.contrib import admin
 from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-   	url(r'^index/', views.index, name='index'),
+   	url(r'^result/', views.result, name='result'),
    	url(r'^story/', views.get_story, name='story'),
     url(r'^ckeditor/',include('ckeditor_uploader.urls'))
 ]

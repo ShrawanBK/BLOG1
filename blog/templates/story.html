@@ -1,7 +1,7 @@
 <h1>story form view, STORY</h1>
 
-<form action="/index/" method="post">
+<form method="post" >
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
